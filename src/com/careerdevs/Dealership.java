@@ -1,47 +1,66 @@
 package com.careerdevs;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
-    Scanner scan = new Scanner(System.in);
-    private static Scanner scanner = new Scanner(System.in);
+        private String dealershipName;
+        private List<Cars>availableCars;
+        private  List<Cars>soldCars;
 
-    public static String readString(String question) {
-
-
-        while (true){
-            System.out.print(question + "\nInput: ");
-            String inputString = scanner.nextLine();
-
-            if ( !inputString.trim().equals("") ) {
-                return inputString.trim();
-            }
-            System.out.println("You must enter something");
+        public Dealership(String dealershipName){
+            this.dealershipName = dealershipName;
+            this.availableCars = new ArrayList<>();
+            this.soldCars = new ArrayList<>();
         }
+
+    public String getDealershipName() {
+        return dealershipName;
+    }
+
+    public void setDealershipName(String dealershipName) {
+        this.dealershipName = dealershipName;
+    }
+
+    public List<Cars> getAvailableCars() {
+        return availableCars;
+    }
+
+    public void setAvailableCars(List<Cars> availableCars) {
+        this.availableCars = availableCars;
 
     }
 
-    public static int readInt(String question) {
-        while (true) {
-            try {
-                System.out.print(question + "\nNumber: ");
-                return scanner.nextInt(); //exception risk
+    public List<Cars> getSoldCars() {
+        return soldCars;
+    }
 
-            } catch ( InputMismatchException e){
-                System.out.println("You must enter an integer, try again");
-                scanner.nextLine();
-            }
+    public void setSoldCars(List<Cars> soldCars) {
 
-        }
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Dealership{" +
+                "dealershipName='" + dealershipName + '\'' +
+                ", availableCars=" + availableCars +
+                ", soldCars=" + soldCars +
+                '}';
+
+    }
+    public void buyCars(String license){
+
     }
 }
 
 
 
 
-
-/*    String dealershipName;
-    List<Car> availableCars;
-    List<Car> soldCars
-*/
+///*    String dealershipName;
+//    List<Car> availableCars;
+//    List<Car> soldCars
+// String as long as it acts as a unique identifier for your car.
+//*/

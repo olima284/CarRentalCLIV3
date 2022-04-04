@@ -1,5 +1,6 @@
 package com.careerdevs;
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,97 +8,51 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
 
-        Cars[] carStorage = new Cars[3];
 
-        boolean isRented = false;
-        Cars car1 = new Cars("Honda", "Accord", 2010, "AW246", isRented);
-        Cars car2 = new Cars("Chevy", "Cruze", 2020, "MV235", isRented);
+        Cars cars1 = new Cars("Honda", "Accord", (short) 2010, "AW246");
+        Cars cars2 = new Cars("Chevy", "Cruze", (short) 2020, "MV235");
+        Cars cars3 = new Cars("Toyota", "Corolla", (short) 2011, "TC784");
+        Dealership dealership1 = new Dealership("Liv's Auto Sales");
 
-        Cars car3 = new Cars("Toyota", "Corolla", 2011, "TC784", isRented);
-        carStorage[0] = car1;
-        carStorage[1] = car2;
-        carStorage[2] = car3; //print car1 make
+        dealership1.getAvailableCars().add(cars1);
+        dealership1.getAvailableCars().add(cars2);
+        dealership1.getAvailableCars().add(cars3);
 
-        //Problem: how do we list just Rental/Available care?
-        car2.setRented(true);
+       // test dealership name
+      //System.out.println("Welcome" + " "+ dealership1.getDealershipName());
+       // print:Liv's Auto Sales
 
-        //solution (std arr): iterate through the array, only display cars where isRented is false
-        System.out.println("Available Cars");
-
-        int listNumber = 1;
-        for (int i = 0; i < carStorage.length; i++) {
-            if (!carStorage[i].isRented()) {
-                System.out.println("(" + (i + 1) + ")" + carStorage[i].getName());
-                listNumber++;
-
-            }
-        }
-        System.out.println("All Cars");
-
-        for (int i = 0; i < carStorage.length; i++) {
-            String carStatus;
-            if(!carStorage[i].isRented()) {
-                carStatus="Available";
-            }else{
-                carStatus="Unavailable";
-            }
-            System.out.println( "(" + (i+1) + " )"+ carStorage[i].getName() + " (" + carStatus + ")");
-        }
-
+      //test
+        //System.out.println(dealership1.getAvailableCars().size());
+       // Print: 3 car value
+         }
     }
 
-    public static void mainMenu() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Would you like to ....");
-        System.out.println("1)Rent");
-        System.out.println("2) Return");
-        System.out.println("Exit the program");
-        System.out.println("Selection:");
-
-        int mainInput = scan.nextInt();
-        switch(mainInput) {
-            case 1:
-                carsAvailableForRent();
-                break;
-
-            case 2:
-                returnCarsAvailable();
-                break;
-
-            case 3:
-                exitProgram();
-                break;
-
-            default :
-                System.out.println( "return to main menu");
-                mainMenu();
-
-        }
-
-    }
-
-    private static void returnCarsAvailable() {
-        //show return date
-        //make car available
-        // run exit program
-    }
-
-    public static void carsAvailableForRent() {
-        //show available cars
-        //give opp to rent car
-        //take in car info
-        //once car rented need to become unavailable
-        //back main menu
-    }
-
-    public static void exitProgram() {
-        //goodbye note
-        //return to main menu
-    }
-
-}
 
 
+//tester
+// System.out.println(cars1);
 
+// Test getter
+//System.out.println(cars1.getMake());
+
+// and setter
+//a new Dealership instance & giving it a name.
+//** ArrayList **
+//System.out.println(availableCarsArrayList.size());
+// <<< Give you the value of availableCars **** size() is a method call
+
+//availableCarsArrayList.add(car2);
+//to add to car2 to available Cars Array List
+
+//soldCarsArrayList.remove()
+//remove item from array list call method @index or @object
+
+
+//soldCarsArrayList.set(0, "car2")
+//System.out.println(soldCarsArrayList.get(0))
+//print: Chevy
+
+//Print Array List
+///System.out.println(soldCarsArrayList)
 
